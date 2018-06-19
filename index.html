@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BLACKPINK</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="split-image split">
+
+		<div class="split-image__top">
+		<img src="bp-black.jpg">
+		</div>
+
+		<div class="split-image__bot">
+		<img src="bp-pink.jpg">
+		</div>
+
+		<!-- <div class="split-image__divider"></div> -->
+
+	</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+		const split = document.querySelector('.split-image');
+		const imgH = document.querySelector('.split-image__top img').height;
+		split.style.height = `${imgH}px`;
+		const divider = document.querySelector('.split-image__divider');
+		const top = document.querySelector('.split-image__top');
+
+		split.addEventListener('mousemove', function(e){
+			// divider.style.left = e.clientX + 'px';
+			delta = (event.clientX - window.innerWidth / 2) * 0.5;
+
+			top.style.width = e.clientX + delta + 'px';
+		});
+	});
+</script>
+</body>
+</html>
